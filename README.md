@@ -16,3 +16,14 @@
 <li>Bot ekranından "Enter" e basın ve program başlasın</li>
 
 <br><p>Artık o sayfadaki tüm ilanları "Hizmet (meslek) uygun değil" diyerek reddedecek</p>
+
+## ⚠️ Yasal Uyarı (Disclaimer)
+
+Bu proje yalnızca eğitim amaçlı ve kişisel verimlilik odaklı geliştirilmiştir. **Ticari kullanım amacı taşımaz** ve herhangi bir platforma zarar vermek için oluşturulmamıştır.
+
+- ❌ Herhangi bir güvenlik önlemini (örneğin: giriş sistemleri, CAPTCHA) **atlatmaz**.
+- ❌ Siteye zarar vermek/performansını düşürmek veya kullanıcı deneyimi olumsuz anlamda etkilemek için **yapılmamıştır**.
+- ✅ Yalnızca kullanıcının kendi hesabıyla yaptığı etkileşimleri otomatikleştirir.
+- ✅ Platform bütünlüğüne saygılıdır, sahte istek veya spam **oluşturmaz**.
+
+**Not:** Bu aracın kullanımı, etkileşimde bulunduğu platformun Hizmet Şartları’nı ihlal edebilir.Yazılımcı, uygunsuz kullanımdan doğabilecek sonuçlardan **sorumlu değildir**. Lütfen sorumluluğu size ait olmak üzere ve dikkatli bir şekilde kullanın.
