@@ -10,7 +10,7 @@ from selenium.common.exceptions import TimeoutException
 
 WAIT_TIMEOUT = 10
 WAIT_BETWEEN_REQUESTS = 1
-WAIT_AFTER_8_REQUESTS = 10 #Eğer durmadan istek atarsak Armut timeout atıyor bir süre siteye giriş yapamıyoruz, o yüzden 8 istekten sonra 10 sn beklersek iyi olur
+WAIT_AFTER_8_REQUESTS = 10
 
 request_counter = 0
 
