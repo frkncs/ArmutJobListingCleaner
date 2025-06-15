@@ -6,11 +6,13 @@
 
 <h3>Kurulum:</h3>
 <li>Bu repo'yu indirin</li>
-<li>"Armut Job Listing Cleaner.exe" programını çalıştırın.</li>
+<li>"armut_job_listing_cleaner.py" dosyasını çalıştırın.</li>
 
 <h3>Kullanım:</h3>
-<li>"Armut Job Listing Cleaner.exe" programını çalıştırın.</li>
-<li>Tarayıcınızdan <i>istemediğiniz</i> ilanları filtreleyin</li>
-<li>Bot'u başlatın</li>
+<li>"armut_job_listing_cleaner.py" dosyasını çalıştırın.</li>
+<li>Program bir tarayıcı session'u başlatacak ve armut'u açacak</li>
+<li><i>Eğer hesabınıza giriş yapmadıysanız</i> tek sefere mahsus Armut hesabınıza giriş yapın</li>
+<li><i>İstemediğiniz</i> ilanları filtreleyin</li>
+<li>Bot ekranından "Enter" e basın ve program başlasın</li>
 
 <br><p>Artık o sayfadaki tüm ilanları "Hizmet (meslek) uygun değil" diyerek reddedecek</p>
