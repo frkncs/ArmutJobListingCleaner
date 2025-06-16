@@ -1,5 +1,6 @@
 import os
 import time
+import random
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -10,9 +11,6 @@ from selenium.common.exceptions import TimeoutException
 
 WAIT_TIMEOUT = 10
 WAIT_BETWEEN_REQUESTS = 1
-WAIT_AFTER_8_REQUESTS = 10
-
-request_counter = 0
 
 def get_driver() -> WebDriver:
     os.popen("\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --remote-debugging-port=9222 --user-data-dir=\"C:/chrome-temp\"")
@@ -44,13 +42,23 @@ def click_reject_button():
     print("Reddet butonuna tıklandı.")
 
 def click_reject_reason_radio_button():
-    radio_label = wait.until(EC.presence_of_element_located(
-        (By.XPATH, '//input[@value="13"]/ancestor::label')
-    ))
+    radio_label : WebDriver
+    
+    select_other_option = random.randint(1, 10) > 5
+    
+    if not select_other_option:
+        radio_label = wait.until(EC.presence_of_element_located(
+            (By.XPATH, '//input[@value="13"]/ancestor::label')
+        ))
+        print("\"Hizmet (meslek) uygun değil\" seçeneği seçildi.")
+    else:
+        radio_label = wait.until(EC.presence_of_element_located(
+            (By.XPATH, '//input[@value="17"]/ancestor::label')
+        ))
+        print("\"Diğer\" seçeneği seçildi.")
+    
     driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", radio_label)
     driver.execute_script("arguments[0].click();", radio_label)
-        
-    print("\"Hizmet (meslek) uygun değil\" seçeneği seçildi.")
     
 def click_submit_button():
     submit_btn = wait.until(EC.element_to_be_clickable(
@@ -62,7 +70,6 @@ def click_submit_button():
     print("Gönder butonuna tıklandı")
 
 def start_rejecting(links: list[str]):
-    global request_counter
     for (inx, link) in enumerate(links):
         print(f"{link[::-1][:8][::-1]} ilanı açılıyor...")
         
@@ -75,16 +82,9 @@ def start_rejecting(links: list[str]):
         
         if (inx >= len(links) - 1):
             print("Alınabilen tüm ilanlar dolaşıldı. Ana ekrana yönlendiriliyor.")
-        else:
-            request_counter += 1
-            
-            print(f"Sıradaki ilan açılıyor... (RC: {request_counter})")
+        else:            
+            print(f"Sıradaki ilan açılıyor...")
             time.sleep(WAIT_BETWEEN_REQUESTS)
-            
-            if request_counter >= 8:
-                request_counter = 0
-                print("8 tane ilan dolaşıldı. 10 sn bekleniyor...")
-                time.sleep(WAIT_AFTER_8_REQUESTS)
 
 def main():
     print("\"Fırsatlarım\" sayfası açılıyor...")
