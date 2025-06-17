@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 WAIT_TIMEOUT = 10
-WAIT_BETWEEN_REQUESTS = 1
+WAIT_BETWEEN_REQUESTS = 2
 
 def get_driver() -> WebDriver:
     os.popen("\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --remote-debugging-port=9222 --user-data-dir=\"C:/chrome-temp\"")
